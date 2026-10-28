@@ -1,20 +1,6 @@
 import { Mail, Github, Linkedin, Send, MapPin } from "lucide-react";
-import { useState } from "react";
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Message sent!");
-    setFormData({ name: "", email: "", message: "" });
-  };
-
   const socialLinks = [
     {
       icon: Github,
@@ -74,17 +60,21 @@ export function ContactSection() {
                 send_message.sh
               </span>
             </div>
-            <form onSubmit={handleSubmit} className="p-8 space-y-6">
+            <form
+              action={
+                import.meta.env.VITE_FORMSPREE_ENDPOINT ||
+                "https://formspree.io/f/MASUKKAN_URL_FORMSPREE_KAMU_DISINI"
+              }
+              method="POST"
+              className="p-8 space-y-6"
+            >
               <div>
                 <label className="font-['JetBrains_Mono'] text-sm font-bold mb-2 block">
                   Name
                 </label>
                 <input
                   type="text"
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
+                  name="name"
                   className="w-full px-4 py-3 border-[2px] border-black font-['JetBrains_Mono'] text-sm focus:outline-none focus:shadow-[4px_4px_0_0_#FFD700]"
                   placeholder="Your name"
                   required
@@ -97,10 +87,7 @@ export function ContactSection() {
                 </label>
                 <input
                   type="email"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
+                  name="email"
                   className="w-full px-4 py-3 border-[2px] border-black font-['JetBrains_Mono'] text-sm focus:outline-none focus:shadow-[4px_4px_0_0_#FFD700]"
                   placeholder="you@example.com"
                   required
@@ -112,10 +99,7 @@ export function ContactSection() {
                   Message
                 </label>
                 <textarea
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
+                  name="message"
                   className="w-full px-4 py-3 border-[2px] border-black font-['JetBrains_Mono'] text-sm focus:outline-none focus:shadow-[4px_4px_0_0_#FFD700] resize-none"
                   rows={6}
                   placeholder="Tell me about the opportunity..."
