@@ -21,7 +21,7 @@ const projects = {
     l2: "hemat setiap watt.",
     desc: "Pantau pemakaian listrik secara realtime dengan sensor PZEM-004T, temukan pemborosan, dan tekan tagihan bulanan Anda.",
     link: "https://test-reading-the-pzem.firebaseapp.com/monitoring.html",
-    tags: ["ESP32", "Firebase", "Python", "GitHub Actions", "IoT", "Forecasting", "Machine Learning"],
+    tags: ["ESP32", "Firebase", "Python", "GitHub Actions", "AIoT", "Forecasting", "Machine Learning"],
     glow: "rgba(16,185,129,.2)",
   },
 } as const;

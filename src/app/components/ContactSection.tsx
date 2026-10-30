@@ -63,7 +63,7 @@ export function ContactSection() {
             <form
               action={
                 import.meta.env.VITE_FORMSPREE_ENDPOINT ||
-                "https://formspree.io/f/MASUKKAN_URL_FORMSPREE_KAMU_DISINI"
+                "https://formspree.io/f/xkjjbllj"
               }
               method="POST"
               className="p-8 space-y-6"

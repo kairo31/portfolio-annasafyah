@@ -155,12 +155,10 @@ export function AboutSection() {
             About Me
           </h3>
           <p className="font-['JetBrains_Mono'] text-sm text-gray-600 max-w-3xl leading-relaxed">
-            Physics graduate (Electronics &amp; Instrumentation) from Universitas Jenderal Soedirman (GPA
-            3.53/4.00) who builds the full data pipeline — from flashing firmware on an ESP32 to
-            deploying SARIMAX forecasting models and training PPO reinforcement learning agents.
-            My thesis designed a residential energy monitoring and prediction system that collected
-            ~60,000 validated records and cut simulated power use by 20%. Seeking Quality Engineer
-            / IoT Engineer roles.
+            Physics graduate (Electronics &amp; Instrumentation) who builds end-to-end data systems, from ESP32 sensor
+            calibration and IoT data collection to automated ETL pipelines, forecasting, and reinforcement learning models. Delivered two
+            projects with live dashboards: an IoT energy-monitoring system (∼60,000 validated records, 14.7% energy saved) and a wildfire
+            platform processing 4.1M satellite detections. Seeking Quality Engineer, IoT Engineer, Data Science or Data Engineer / Analyst roles.
           </p>
         </div>
 
