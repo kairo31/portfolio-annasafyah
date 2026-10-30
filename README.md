@@ -13,5 +13,5 @@ The contact form submits directly to Formspree. Copy `.env.example` to `.env`,
 then replace `your-form-id` with the endpoint from your Formspree dashboard:
 
 ```bash
-VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/xkjjbllj
+VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
 ```
