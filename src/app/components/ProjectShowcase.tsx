@@ -30,7 +30,7 @@ const projects = {
     l1: "Asap terdeteksi,",
     l2: "udara langsung disaring.",
     desc: "Sistem IoT end-to-end yang memantau asap karhutla dan mengatur kecepatan kipas HEPA via PWM secara otomatis — closed-loop control untuk kualitas udara lokal.",
-    tags: ["ESP32", "MQTT · Mosquitto", "PWM Control", "Python", "PostgreSQL + TimescaleDB", "Docker", "AWS EC2 (Ubuntu)", "Grafana"],
+    tags: ["ESP32", "JavaScript", "MQTT", "PWM Control", "Python", "PostgreSQL + TimescaleDB", "Docker", "AWS EC2 (Ubuntu)", "Grafana"],
     glow: "rgba(14,165,233,.18)",
     status: "On Going",
   },
@@ -54,13 +54,13 @@ export function ProjectShowcase() {
       <div className="relative px-6 py-8">
         {/* Toggle buttons */}
         <div className="mb-8 flex justify-center">
-          <div className="flex gap-2 border-[2px] border-black bg-black p-1 shadow-[4px_4px_0_0_#FFD700]">
+          <div className="flex max-w-full gap-2 overflow-x-auto border-[2px] border-black bg-black p-1 shadow-[4px_4px_0_0_#FFD700]">
             {(Object.keys(projects) as Key[]).map((k) => (
               <button
                 key={k}
                 onClick={() => setKey(k)}
                 className={[
-                  "px-4 py-1.5 text-sm font-['Space_Grotesk'] font-semibold transition-all duration-200 border-[2px]",
+                  "shrink-0 px-4 py-1.5 text-sm font-['Space_Grotesk'] font-semibold transition-all duration-200 border-[2px]",
                   key === k
                     ? "bg-[#FFD700] text-black border-[#FFD700] shadow-none"
                     : "bg-transparent text-slate-400 border-transparent hover:text-white",
