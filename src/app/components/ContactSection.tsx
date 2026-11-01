@@ -61,10 +61,7 @@ export function ContactSection() {
               </span>
             </div>
             <form
-              action={
-                import.meta.env.VITE_FORMSPREE_ENDPOINT ||
-                "https://formspree.io/f/MASUKKAN_URL_FORMSPREE_KAMU_DISINI"
-              }
+              action="https://formspree.io/f/xkjjbllj"
               method="POST"
               className="p-8 space-y-6"
             >
