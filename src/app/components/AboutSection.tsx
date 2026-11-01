@@ -20,6 +20,11 @@ const skills: { name: string; category: string; icon: SkillIcon }[] = [
     icon: { type: "img", src: `${DEVICON}/cplusplus/cplusplus-original.svg` },
   },
   {
+    name: "JavaScript",
+    category: "Language",
+    icon: { type: "img", src: `${DEVICON}/javascript/javascript-original.svg` },
+  },
+  {
     name: "SQL",
     category: "Language",
     icon: { type: "img", src: `${DEVICON}/postgresql/postgresql-original.svg` },
@@ -68,6 +73,21 @@ const skills: { name: string; category: string; icon: SkillIcon }[] = [
     name: "GitHub Actions",
     category: "DevOps",
     icon: { type: "img", src: `${DEVICON}/github/github-original.svg` },
+  },
+  {
+    name: "Docker",
+    category: "DevOps",
+    icon: { type: "img", src: `${DEVICON}/docker/docker-original.svg` },
+  },
+  {
+    name: "MQTT",
+    category: "IoT",
+    icon: { type: "img", src: `${DEVICON}/mqtt/mqtt-original.svg` },
+  },
+  {
+    name: "Grafana",
+    category: "Monitoring",
+    icon: { type: "img", src: `${DEVICON}/grafana/grafana-original.svg` },
   },
   {
     name: "Microsoft Fabric",
