@@ -52,7 +52,7 @@ function FanIcon({ size }: { size: string }) {
   return <Fan className={`${size} animate-spin text-sky-300 [animation-duration:0.6s]`} />;
 }
 
-function PurifierPreview({ variant }: { variant: "desktop" | "mobile" }) {
+export function PurifierPreview({ variant }: { variant: "desktop" | "mobile" }) {
   if (variant === "mobile") {
     return (
       <div className="flex h-full flex-col gap-2 bg-[#0a0f1a] px-3 pb-3 pt-9 text-slate-100 [font-family:'Space_Grotesk']">

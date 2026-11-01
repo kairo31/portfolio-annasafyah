@@ -4,6 +4,7 @@ import { DeviceMockup } from "./DeviceMockup";
 import { DashboardPreview } from "./DashboardPreview";
 import { PzemPreview } from "./PzemPreview";
 import { ExternalLink } from "lucide-react";
+import { PurifierPreview } from "./SmartPurifierShowcase";
 
 const projects = {
   karhutla: {
@@ -23,6 +24,15 @@ const projects = {
     link: "https://test-reading-the-pzem.firebaseapp.com/monitoring.html",
     tags: ["ESP32", "Firebase", "Python", "GitHub Actions", "AIoT", "Forecasting", "Machine Learning"],
     glow: "rgba(16,185,129,.2)",
+  },
+  purifier: {
+    tag: "Smart Purifier",
+    l1: "Asap terdeteksi,",
+    l2: "udara langsung disaring.",
+    desc: "Sistem IoT end-to-end yang memantau asap karhutla dan mengatur kecepatan kipas HEPA via PWM secara otomatis — closed-loop control untuk kualitas udara lokal.",
+    tags: ["ESP32", "MQTT · Mosquitto", "PWM Control", "Python", "PostgreSQL + TimescaleDB", "Docker", "AWS EC2 (Ubuntu)", "Grafana"],
+    glow: "rgba(14,165,233,.18)",
+    status: "On Going",
   },
 } as const;
 
@@ -97,17 +107,27 @@ export function ProjectShowcase() {
               </div>
 
               {/* Link */}
-              {p.link && (
-                <a
-                  href={p.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="mt-5 inline-flex items-center gap-2 text-xs font-['JetBrains_Mono'] text-[#FFD700] hover:text-yellow-300 transition-colors"
-                >
-                  <ExternalLink className="size-3.5" />
-                  Lihat live demo
-                </a>
+              {(p.link || p.status) && (
+                <div className="mt-5 flex flex-wrap items-center gap-4">
+                  {p.link && (
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-2 text-xs font-['JetBrains_Mono'] text-[#FFD700] hover:text-yellow-300 transition-colors"
+                    >
+                      <ExternalLink className="size-3.5" />
+                      Lihat live demo
+                    </a>
+                  )}
+                  {p.status && (
+                    <span className="inline-flex items-center gap-2 border border-yellow-400/60 bg-yellow-400/10 px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider text-yellow-400">
+                      <span className="size-2 animate-pulse rounded-full bg-yellow-400" />
+                      {p.status}
+                    </span>
+                  )}
+                </div>
               )}
             </motion.div>
           </AnimatePresence>
@@ -125,13 +145,17 @@ export function ProjectShowcase() {
               <DeviceMockup type="laptop">
                 {key === "karhutla"
                   ? <DashboardPreview variant="desktop" />
-                  : <PzemPreview variant="desktop" />}
+                  : key === "pzem"
+                    ? <PzemPreview variant="desktop" />
+                    : <PurifierPreview variant="desktop" />}
               </DeviceMockup>
               <div className="absolute bottom-0 right-0 w-36">
                 <DeviceMockup type="mobile">
                   {key === "karhutla"
                     ? <DashboardPreview variant="mobile" />
-                    : <PzemPreview variant="mobile" />}
+                    : key === "pzem"
+                      ? <PzemPreview variant="mobile" />
+                      : <PurifierPreview variant="mobile" />}
                 </DeviceMockup>
               </div>
             </motion.div>

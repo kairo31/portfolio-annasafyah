@@ -1,7 +1,6 @@
 import { Circle, ExternalLink, BookOpen, Cpu } from "lucide-react";
 import { useState } from "react";
 import { ProjectShowcase } from "./ProjectShowcase";
-import SmartPurifierShowcase from "./SmartPurifierShowcase";
 
 interface Project {
   id: number;
@@ -87,8 +86,6 @@ export function ProjectGallery() {
         <div className="mb-6">
           <ProjectShowcase />
         </div>
-        <SmartPurifierShowcase />
-
         {/* Bento Grid — remaining projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
