@@ -27,10 +27,10 @@ const tone = (value: number, warn: number, crit: number) =>
       : "text-emerald-400 bg-emerald-500/10 border-emerald-500/30";
 
 const stats = [
-  { icon: Cloud, label: "Asap (MQ-2)", value: 72, unit: "ppm", style: tone(72, 40, 70) },
+  { icon: Cloud, label: "PM2.5 (PMS5003)", value: 72, unit: "µg/m³", style: tone(72, 40, 70) },
   { icon: Thermometer, label: "Suhu", value: 36.2, unit: "°C", style: tone(36.2, 33, 38) },
   { icon: Droplets, label: "Kelembapan", value: 48, unit: "%", style: "text-emerald-400 bg-emerald-500/10 border-emerald-500/30" },
-  { icon: Fan, label: "Fan PWM", value: 91, unit: "%", style: "text-sky-300 bg-sky-500/10 border-sky-500/30" },
+  { icon: Fan, label: "Level kipas", value: "TURBO", unit: "", style: "text-sky-300 bg-sky-500/10 border-sky-500/30" },
 ];
 
 function Series({ height = 50 }: { height?: number }) {
@@ -58,12 +58,12 @@ export function PurifierPreview({ variant }: { variant: "desktop" | "mobile" }) 
       <div className="flex h-full flex-col gap-2 bg-[#0a0f1a] px-3 pb-3 pt-9 text-slate-100 [font-family:'Space_Grotesk']">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1.5 text-[11px] font-semibold"><Wind className="size-3.5 text-sky-400" />Smart Purifier</div>
-          <span className="rounded border border-red-500/30 bg-red-500/10 px-1 text-[7px] text-red-400">ASAP TINGGI</span>
+          <span className="rounded border border-red-500/30 bg-red-500/10 px-1 text-[7px] text-red-400">PM2.5 TINGGI</span>
         </div>
         <div className="flex flex-col items-center rounded-xl bg-gradient-to-br from-sky-600 to-blue-700 p-3">
           <div className="relative grid size-20 place-items-center rounded-full border-4 border-white/20"><FanIcon size="size-10" /></div>
           <div className="mt-2 text-[8px] uppercase tracking-widest text-sky-100/80">HEPA Fan · Auto</div>
-          <div className="text-2xl font-bold">91<span className="text-xs"> % PWM</span></div>
+          <div className="text-xl font-bold">TURBO</div>
         </div>
         <div className="grid grid-cols-3 gap-1.5">
           {stats.slice(0, 3).map((stat) => (
@@ -90,10 +90,10 @@ export function PurifierPreview({ variant }: { variant: "desktop" | "mobile" }) 
       <div className="flex flex-1 flex-col gap-2 p-3">
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-[11px] font-semibold">Smart Karhutla Purifier · Grafana</div>
-            <div className="font-mono text-[7px] text-slate-500">ESP32 → MQTT (Mosquitto) → listener.py → TimescaleDB · AWS EC2</div>
+            <div className="text-[11px] font-semibold">Purifier HEPA Adaptif · Digital Twin</div>
+            <div className="font-mono text-[7px] text-slate-500">Python Simulator ↔ C++ Controller · ESP32-S3</div>
           </div>
-          <div className="flex gap-1 font-mono text-[7px]"><span className="rounded border border-white/10 px-1.5 py-0.5 text-slate-400">Last 1h</span><span className="rounded border border-white/10 px-1.5 py-0.5 text-slate-400">⟳ 5s</span></div>
+          <div className="flex gap-1 font-mono text-[7px]"><span className="rounded border border-white/10 px-1.5 py-0.5 text-slate-400">Simulator</span><span className="rounded border border-white/10 px-1.5 py-0.5 text-slate-400">ESP32-S3</span></div>
         </div>
         <div className="grid grid-cols-4 gap-1.5">
           {stats.map((stat) => (
@@ -105,12 +105,12 @@ export function PurifierPreview({ variant }: { variant: "desktop" | "mobile" }) 
         </div>
         <div className="grid flex-1 grid-cols-3 gap-2">
           <div className="col-span-2 flex flex-col rounded border border-white/5 bg-[#181b1f] p-2">
-            <div className="mb-1 flex items-center justify-between text-[8px]"><span className="font-semibold">Kepadatan Asap & Respons Fan (PWM)</span><span className="flex gap-2 font-mono text-[6px]"><span className="text-orange-400">— smoke_ppm</span><span className="text-sky-400">-- fan_pwm</span></span></div>
+            <div className="mb-1 flex items-center justify-between text-[8px]"><span className="font-semibold">Paparan PM2.5 & Level Kipas</span><span className="flex gap-2 font-mono text-[6px]"><span className="text-orange-400">— pm25</span><span className="text-sky-400">-- fan_level</span></span></div>
             <div className="flex-1"><Series /></div>
           </div>
           <div className="flex flex-col gap-2">
-            <div className="flex flex-1 items-center gap-2 rounded border border-white/5 bg-[#181b1f] p-2"><FanIcon size="size-7" /><div><div className="text-[7px] text-slate-500">HEPA Actuator</div><div className="text-[10px] font-semibold text-sky-300">AUTO · 91%</div><div className="font-mono text-[6px] text-slate-500">closed-loop control</div></div></div>
-            <div className="flex-1 space-y-1 rounded border border-white/5 bg-[#181b1f] p-2 font-mono text-[6px] text-slate-400"><div className="text-[8px] font-semibold text-slate-100 [font-family:'Space_Grotesk']">MQTT Stream</div><div><span className="text-emerald-400">karhutla/node1</span> {"{"}"smoke":72{"}"}</div><div><span className="text-emerald-400">karhutla/node1</span> {"{"}"temp":36.2{"}"}</div><div><span className="text-emerald-400">karhutla/fan</span> {"{"}"pwm":232{"}"}</div></div>
+            <div className="flex flex-1 items-center gap-2 rounded border border-white/5 bg-[#181b1f] p-2"><FanIcon size="size-7" /><div><div className="text-[7px] text-slate-500">HEPA Actuator</div><div className="text-[10px] font-semibold text-sky-300">AUTO · TURBO</div><div className="font-mono text-[6px] text-slate-500">4-level control</div></div></div>
+            <div className="flex-1 space-y-1 rounded border border-white/5 bg-[#181b1f] p-2 font-mono text-[6px] text-slate-400"><div className="text-[8px] font-semibold text-slate-100 [font-family:'Space_Grotesk']">Model & Firmware</div><div><span className="text-emerald-400">sim</span> PM2.5 → 4-level control</div><div><span className="text-emerald-400">sim</span> Monte Carlo scenarios</div><div><span className="text-emerald-400">host test</span> C++ ↔ Python</div></div>
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@ export function PurifierPreview({ variant }: { variant: "desktop" | "mobile" }) 
   );
 }
 
-const tech = ["ESP32", "MQTT · Mosquitto", "PWM Control", "Python", "PostgreSQL + TimescaleDB", "Docker", "AWS EC2 (Ubuntu)", "Grafana"];
+const tech = ["Digital Twin", "Python", "NumPy", "Matplotlib", "Monte Carlo Simulation", "C++", "ESP32-S3", "PlatformIO", "pytest", "GitHub Actions"];
 
 export default function SmartPurifierShowcase() {
   return (

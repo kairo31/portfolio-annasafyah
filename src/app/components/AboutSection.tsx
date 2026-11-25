@@ -75,9 +75,9 @@ const skills: { name: string; category: string; icon: SkillIcon }[] = [
     icon: { type: "img", src: `${DEVICON}/github/github-original.svg` },
   },
   {
-    name: "Docker",
-    category: "DevOps",
-    icon: { type: "img", src: `${DEVICON}/docker/docker-original.svg` },
+    name: "PlatformIO",
+    category: "IoT Hardware",
+    icon: { type: "lucide", Icon: Cpu },
   },
   {
     name: "MQTT",
@@ -85,9 +85,9 @@ const skills: { name: string; category: string; icon: SkillIcon }[] = [
     icon: { type: "img", src: `${DEVICON}/mqtt/mqtt-original.svg` },
   },
   {
-    name: "Grafana",
-    category: "Monitoring",
-    icon: { type: "img", src: `${DEVICON}/grafana/grafana-original.svg` },
+    name: "pytest",
+    category: "Testing",
+    icon: { type: "lucide", Icon: FlaskConical },
   },
   {
     name: "Microsoft Fabric",

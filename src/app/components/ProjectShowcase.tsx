@@ -26,11 +26,12 @@ const projects = {
     glow: "rgba(16,185,129,.2)",
   },
   purifier: {
-    tag: "Smart Purifier",
-    l1: "Asap terdeteksi,",
-    l2: "udara langsung disaring.",
-    desc: "Sistem IoT end-to-end yang memantau asap karhutla dan mengatur kecepatan kipas HEPA via PWM secara otomatis — closed-loop control untuk kualitas udara lokal.",
-    tags: ["ESP32", "JavaScript", "MQTT", "PWM Control", "Python", "PostgreSQL + TimescaleDB", "Docker", "AWS EC2 (Ubuntu)", "Grafana"],
+    tag: "Purifier HEPA Adaptif",
+    l1: "Uji strategi purifier,",
+    l2: "sebelum dirakit.",
+    desc: "Digital twin Python membandingkan strategi kendali PM2.5 dan biometrik opsional. Logika kontrol C++ juga diuji terhadap simulator untuk firmware ESP32-S3.",
+    link: "https://github.com/kairo31/Adaptive-HEPA-Air-Purifier-for-Wildfire-Smoke-Mitigation--Digital-Twin-Simulation---ESP32-S3-Firmwar",
+    tags: ["Digital Twin", "Python", "NumPy", "Matplotlib", "Monte Carlo Simulation", "C++", "ESP32-S3", "PlatformIO", "pytest", "GitHub Actions"],
     glow: "rgba(14,165,233,.18)",
     status: "On Going",
   },
@@ -118,7 +119,7 @@ export function ProjectShowcase() {
                       className="inline-flex items-center gap-2 text-xs font-['JetBrains_Mono'] text-[#FFD700] hover:text-yellow-300 transition-colors"
                     >
                       <ExternalLink className="size-3.5" />
-                      Lihat live demo
+                      {key === "purifier" ? "Lihat repo GitHub" : "Lihat live demo"}
                     </a>
                   )}
                   {p.status && (
