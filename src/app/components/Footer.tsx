@@ -68,10 +68,9 @@ export function Footer() {
                 ~/about
               </h4>
               <p className="font-['JetBrains_Mono'] text-xs text-gray-400 leading-relaxed">
-                Physics graduate (Electronics &amp; Instrumentation) who builds
-                full data pipelines — from ESP32 sensors to SARIMAX forecasting
-                and PPO reinforcement learning agents. Seeking Quality Engineer /
-                IoT Engineer roles.
+                Physics graduate (Electronics &amp; Instrumentation) focused on
+                IoT, data systems, and hardware QA/QC. Saved 14.7% energy and
+                built a pipeline processing 4.1M satellite records.
               </p>
             </div>
 

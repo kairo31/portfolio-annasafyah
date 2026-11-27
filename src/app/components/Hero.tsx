@@ -1,4 +1,4 @@
-import { Minus, Square, X, Search } from "lucide-react";
+import { Minus, Square, X, ArrowDownToLine, ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
@@ -41,59 +41,52 @@ export function Hero() {
           </div>
 
           {/* Window Content */}
-          <div className="p-12">
+          <div className="p-6 sm:p-8 md:p-12">
             {/* Terminal Output Style */}
             <div className="font-['JetBrains_Mono'] space-y-4 mb-8">
-              <div className="text-sm">
-                <span className="text-[#00FF00]">annasafyah@kairo31</span>
-                <span className="text-black">:</span>
-                <span className="text-blue-600">~</span>
-                <span className="text-black">$ whoami</span>
-              </div>
-              <h1 className="text-5xl font-['Space_Grotesk'] font-bold mb-4 leading-tight">
-                AIoT ENGINEER<br />& DATA SCIENTIST
+              <h1 className="text-4xl sm:text-5xl font-['Space_Grotesk'] font-bold mb-4 leading-tight">
+                IoT ENGINEER<br />& DATA ENGINEER
               </h1>
               <p className="text-lg leading-relaxed max-w-2xl font-['JetBrains_Mono']">
-                Physics graduate who builds the full data pipeline — from ESP32
-                sensors to SARIMAX forecasting and reinforcement learning agents.
-                Deployed a live energy monitoring system with ~60,000 validated
-                records and calibrated 50+ environmental sensors as an intern.
+                Physics graduate in Electronics &amp; Instrumentation connecting
+                calibrated sensor hardware to IoT data systems, analytics, and
+                hardware QA/QC.
               </p>
             </div>
 
-            {/* Command Palette Style Search */}
-            <div className="mt-8 max-w-2xl">
-              <div className="bg-white border-[2px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] flex items-center gap-3 px-4 py-3">
-                <Search className="w-5 h-5 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Jump to project... (⌘K)"
-                  className="flex-1 outline-none font-['JetBrains_Mono'] text-sm bg-transparent"
-                />
-                <kbd className="px-2 py-1 bg-[#F0F0F0] border-[2px] border-black text-xs font-['JetBrains_Mono']">
-                  ⌘K
-                </kbd>
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <div className="flex min-h-20 flex-col justify-center border-[2px] border-black bg-[#FFD700] px-4 py-3 shadow-[3px_3px_0_0_rgba(0,0,0,1)]">
+                <div className="font-['JetBrains_Mono'] text-2xl font-black leading-none sm:text-3xl">14.7%</div>
+                <div className="mt-2 font-['JetBrains_Mono'] text-[10px] font-bold uppercase leading-tight tracking-wide sm:text-xs">Energy Saved</div>
+              </div>
+              <div className="flex min-h-20 flex-col justify-center border-[2px] border-black bg-[#00FF00] px-4 py-3 shadow-[3px_3px_0_0_rgba(0,0,0,1)]">
+                <div className="font-['JetBrains_Mono'] text-2xl font-black leading-none sm:text-3xl">4.1M</div>
+                <div className="mt-2 font-['JetBrains_Mono'] text-[10px] font-bold uppercase leading-tight tracking-wide sm:text-xs">Satellite Records</div>
+              </div>
+              <div className="flex min-h-20 flex-col justify-center border-[2px] border-black bg-white px-4 py-3 shadow-[3px_3px_0_0_rgba(0,0,0,1)]">
+                <div className="font-['JetBrains_Mono'] text-2xl font-black leading-none sm:text-3xl">60+</div>
+                <div className="mt-2 font-['JetBrains_Mono'] text-[10px] font-bold uppercase leading-tight tracking-wide sm:text-xs">Sensors Calibrated</div>
+              </div>
+              <div className="flex min-h-20 flex-col justify-center border-[2px] border-black bg-black px-4 py-3 text-white shadow-[3px_3px_0_0_#FFD700]">
+                <div className="font-['JetBrains_Mono'] text-2xl font-black leading-none text-[#FFD700] sm:text-3xl">100%</div>
+                <div className="mt-2 font-['JetBrains_Mono'] text-[10px] font-bold uppercase leading-tight tracking-wide text-gray-300 sm:text-xs">HIL Reliability</div>
               </div>
             </div>
 
-            {/* Quick Stats — real numbers from resume */}
-            <div className="mt-8 flex gap-4 flex-wrap">
-              <div className="bg-[#FFD700] border-[2px] border-black px-4 py-2 shadow-[3px_3px_0_0_rgba(0,0,0,1)]">
-                <div className="font-['JetBrains_Mono'] text-2xl font-bold">~60K</div>
-                <div className="font-['JetBrains_Mono'] text-xs">Sensor Records</div>
-              </div>
-              <div className="bg-[#00FF00] border-[2px] border-black px-4 py-2 shadow-[3px_3px_0_0_rgba(0,0,0,1)]">
-                <div className="font-['JetBrains_Mono'] text-2xl font-bold">3.34%</div>
-                <div className="font-['JetBrains_Mono'] text-xs">MAPE (1-day forecast)</div>
-              </div>
-              <div className="bg-white border-[2px] border-black px-4 py-2 shadow-[3px_3px_0_0_rgba(0,0,0,1)]">
-                <div className="font-['JetBrains_Mono'] text-2xl font-bold">50+</div>
-                <div className="font-['JetBrains_Mono'] text-xs">Sensors Calibrated</div>
-              </div>
-              <div className="bg-black text-white border-[2px] border-black px-4 py-2 shadow-[3px_3px_0_0_#FFD700]">
-                <div className="font-['JetBrains_Mono'] text-2xl font-bold text-[#FFD700]">2×</div>
-                <div className="font-['JetBrains_Mono'] text-xs text-gray-300">Intl. Conference</div>
-              </div>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 bg-[#FFD700] px-5 py-3 border-[2px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all font-['JetBrains_Mono'] font-bold"
+              >
+                Lihat Proyek <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="/CV_Annasafyah_Hayati.pdf"
+                download
+                className="inline-flex items-center gap-2 bg-white px-5 py-3 border-[2px] border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all font-['JetBrains_Mono'] font-bold"
+              >
+                Download CV (PDF) <ArrowDownToLine className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>

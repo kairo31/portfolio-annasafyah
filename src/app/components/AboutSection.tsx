@@ -1,103 +1,44 @@
-import React from "react";
 import { Cpu, BrainCircuit, FlaskConical, GraduationCap, TrendingUp, BrainCog } from "lucide-react";
 
-// CDN base URLs
-const DEVICON = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons";
+const skillGroups = [
+  {
+    title: "QA/QC & Testing",
+    skills: ["Sensor Calibration & Testing", "Quality Inspection", "Hardware-in-the-Loop", "Root Cause Analysis", "Data Quality Checks", "pytest", "RealTerm", "Modbus Poll"],
+  },
+  {
+    title: "IoT & Hardware",
+    skills: ["ESP32", "ESP32-CAM", "Mappi32", "PZEM-004T", "DHT22", "Modbus / TTL", "MQTT", "Arduino IDE (C++)", "Soldering"],
+  },
+  {
+    title: "Data & Analytics",
+    skills: ["Python", "pandas", "scikit-learn", "xarray", "SQL", "PostgreSQL / TimescaleDB", "ETL Pipelines", "SARIMAX", "Machine Learning", "Reinforcement Learning (PPO)", "Microsoft Excel"],
+  },
+  {
+    title: "Cloud & Tools",
+    skills: ["AWS (EC2)", "Docker", "Git", "GitHub Actions", "Firebase", "Grafana", "Google Colab", "Plotly", "Leaflet", "Microsoft Fabric", "VS Code"],
+  },
+];
 
-type SkillIcon =
-  | { type: "img"; src: string; white?: boolean; padded?: boolean; blend?: boolean }
-  | { type: "lucide"; Icon: React.ElementType };
-
-const skills: { name: string; category: string; icon: SkillIcon }[] = [
+const certifications = [
   {
-    name: "Python",
-    category: "Language",
-    icon: { type: "img", src: `${DEVICON}/python/python-original.svg` },
+    title: "ICMA-SURE 2026",
+    description: "International conference presenter — residential energy optimization with PPO.",
   },
   {
-    name: "C++",
-    category: "Language",
-    icon: { type: "img", src: `${DEVICON}/cplusplus/cplusplus-original.svg` },
+    title: "RC-QED 1446",
+    description: "International conference presenter — computational study of Earth's core iron behavior.",
   },
   {
-    name: "JavaScript",
-    category: "Language",
-    icon: { type: "img", src: `${DEVICON}/javascript/javascript-original.svg` },
+    title: "Microsoft Fabric — Dicoding",
+    description: "Belajar Penerapan Data Science dengan Microsoft Fabric · Aug–Sep 2026.",
   },
   {
-    name: "SQL",
-    category: "Language",
-    icon: { type: "img", src: `${DEVICON}/postgresql/postgresql-original.svg` },
+    title: "AWS Cloud Practitioner Essentials",
+    description: "Amazon Web Services · Aug–Sep 2026.",
   },
   {
-    name: "NumPy",
-    category: "Data Science",
-    icon: { type: "img", src: `${DEVICON}/numpy/numpy-original.svg` },
-  },
-  {
-    name: "Pandas",
-    category: "Data Science",
-    icon: { type: "img", src: `${DEVICON}/pandas/pandas-original.svg` },
-  },
-  {
-    name: "Matplotlib",
-    category: "Data Science",
-    icon: { type: "img", src: `${DEVICON}/matplotlib/matplotlib-original.svg` },
-  },
-  {
-    name: "Machine Learning",
-    category: "AI/ML",
-    icon: { type: "lucide", Icon: BrainCog },
-  },
-  {
-    name: "Forecasting",
-    category: "AI/ML",
-    icon: { type: "lucide", Icon: TrendingUp },
-  },
-  {
-    name: "Arduino IDE",
-    category: "IoT Hardware",
-    icon: { type: "img", src: `${DEVICON}/arduino/arduino-original.svg` },
-  },
-  {
-    name: "Firebase",
-    category: "Cloud",
-    icon: { type: "img", src: `${DEVICON}/firebase/firebase-plain.svg` },
-  },
-  {
-    name: "AWS Cloud",
-    category: "Cloud",
-    icon: { type: "img", src: "/icons/aws.png", padded: true },
-  },
-  {
-    name: "GitHub Actions",
-    category: "DevOps",
-    icon: { type: "img", src: `${DEVICON}/github/github-original.svg` },
-  },
-  {
-    name: "PlatformIO",
-    category: "IoT Hardware",
-    icon: { type: "lucide", Icon: Cpu },
-  },
-  {
-    name: "MQTT",
-    category: "IoT",
-    icon: { type: "img", src: `${DEVICON}/mqtt/mqtt-original.svg` },
-  },
-  {
-    name: "pytest",
-    category: "Testing",
-    icon: { type: "lucide", Icon: FlaskConical },
-  },
-  {
-    name: "Microsoft Fabric",
-    category: "Data Eng.",
-    icon: { type: "img", src: "/icons/microsoft-fabric.png", blend: true },
-  },
-  {
-    name: "RealTerm",
-    category: "Tool",
-    icon: { type: "lucide", Icon: Cpu },
+    title: "Deloitte Australia Data Analytics Job Simulation",
+    description: "Forage · Jul–Aug 2026.",
   },
 ];
 
@@ -118,7 +59,7 @@ const highlights = [
     icon: FlaskConical,
     title: "Hardware Validation",
     description:
-      "Calibrated 50+ ARR and soil moisture sensors. Hardware-in-the-Loop testing with 100% serial reliability.",
+      "Calibrated 60+ environmental sensors. Hardware-in-the-Loop testing with 100% serial reliability.",
   },
   {
     icon: GraduationCap,
@@ -131,7 +72,7 @@ const highlights = [
 const experience = [
   {
     role: "Engineer Intern",
-    company: "KMTek – Karya Merapi Teknologi",
+    company: "Mertani & Karya Merapi Teknologi (KMTek)",
     location: "Sleman, Yogyakarta",
     period: "Jan 2025 – Jun 2025",
     bullets: [
@@ -175,10 +116,10 @@ export function AboutSection() {
             About Me
           </h3>
           <p className="font-['JetBrains_Mono'] text-sm text-gray-600 max-w-3xl leading-relaxed">
-            Physics graduate (Electronics &amp; Instrumentation) who builds end-to-end data systems, from ESP32 sensor
-            calibration and IoT data collection to automated ETL pipelines, forecasting, and reinforcement learning models. Delivered two
-            projects with live dashboards: an IoT energy-monitoring system (∼60,000 validated records, 14.7% energy saved) and a wildfire
-            platform processing 4.1M satellite detections. Seeking Quality Engineer, IoT Engineer, Data Science or Data Engineer / Analyst roles.
+            Physics graduate (Electronics &amp; Instrumentation) targeting IoT Engineer and Data Engineer roles, connecting calibrated
+            sensor hardware to data pipelines and forecasting. Built an energy monitoring system that saved 14.7% energy in a 29-day
+            test and an automated pipeline processing 4.1M satellite records. Calibrated 60+ sensors and tested prototypes with 100%
+            serial transmission reliability.
           </p>
         </div>
 
@@ -200,46 +141,50 @@ export function AboutSection() {
           ))}
         </div>
 
-        {/* Tech Stack — Codedex badge style */}
+        {/* Skills grouped by domain */}
         <div className="bg-black border-[3px] border-black p-8 shadow-[8px_8px_0_0_#FFD700] mb-12">
           <h4 className="font-['JetBrains_Mono'] font-bold text-[#FFD700] mb-6">
-            // Tech Stack
+            // Skills by Domain
           </h4>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
-            {skills.map((skill) => (
-              <div
-                key={skill.name}
-                className="group flex flex-col items-center gap-2 bg-[#111] border-[2px] border-[#333] p-4 cursor-default
-                           hover:border-[#FFD700] hover:shadow-[0_0_12px_rgba(255,215,0,0.35)] transition-all duration-200"
-              >
-                {/* Icon */}
-                <div className="w-10 h-10 flex items-center justify-center">
-                  {skill.icon.type === "img" ? (
-                    <img
-                      src={skill.icon.src}
-                      alt={skill.name}
-                      className={[
-                        "w-10 h-10 object-contain",
-                        skill.icon.padded ? "bg-white rounded p-1" : "",
-                      ].join(" ")}
-                      style={{
-                        ...(skill.icon.white ? { filter: "brightness(0) invert(1)" } : {}),
-                        ...(skill.icon.blend ? { mixBlendMode: "screen" } : {}),
-                      }}
-                      loading="lazy"
-                    />
-                  ) : (
-                    <skill.icon.Icon className="w-10 h-10 text-[#FFD700]" />
-                  )}
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            {skillGroups.map((group) => (
+              <div key={group.title} className="border-[2px] border-[#333] bg-[#111] p-5">
+                <h5 className="mb-4 font-['JetBrains_Mono'] text-sm font-bold text-white">
+                  {group.title}
+                </h5>
+                <div className="flex flex-wrap gap-2">
+                  {group.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="border border-[#555] bg-black px-2 py-1 font-['JetBrains_Mono'] text-xs text-gray-200"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
-                {/* Skill name */}
-                <span className="font-['JetBrains_Mono'] text-xs font-bold text-white text-center leading-tight">
-                  {skill.name}
-                </span>
-                {/* Category */}
-                <span className="font-['JetBrains_Mono'] text-[10px] text-[#888] text-center leading-tight">
-                  {skill.category}
-                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-12">
+          <div className="mb-6 inline-block border-[2px] border-black bg-black px-4 py-2 text-white">
+            <h4 className="font-['JetBrains_Mono'] text-sm">
+              <span className="text-[#00FF00]">cat</span> ./certifications.txt
+            </h4>
+          </div>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {certifications.map((certification) => (
+              <div
+                key={certification.title}
+                className="border-[2px] border-black bg-[#F0F0F0] p-5 shadow-[3px_3px_0_0_rgba(0,0,0,1)]"
+              >
+                <h5 className="font-['JetBrains_Mono'] text-sm font-bold">
+                  {certification.title}
+                </h5>
+                <p className="mt-2 font-['JetBrains_Mono'] text-xs leading-relaxed text-gray-600">
+                  {certification.description}
+                </p>
               </div>
             ))}
           </div>
@@ -296,7 +241,7 @@ export function AboutSection() {
             </div>
             <div className="text-white pl-6">
               primary:{" "}
-              <span className="text-orange-400">"Quality Engineer / IoT Engineer"</span>,
+              <span className="text-orange-400">"IoT Engineer / Data Engineer"</span>,
             </div>
             <div className="text-white pl-6">
               domain:{" "}

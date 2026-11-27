@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f3f5f7"/>
+  <rect x="70" y="65" width="1060" height="545" fill="#fff" stroke="#111" stroke-width="4"/>
+  <rect x="70" y="65" width="1060" height="90" fill="#126b46"/>
+  <text x="115" y="125" fill="#fff" font-family="Arial,sans-serif" font-size="34" font-weight="700">SALES DATA ANALYSIS</text>
+  <rect x="115" y="195" width="450" height="340" fill="#f5f8f6" stroke="#d3ded7" stroke-width="3"/>
+  <text x="150" y="250" fill="#126b46" font-family="Arial,sans-serif" font-size="24" font-weight="700">WORKFLOW</text>
+  <text x="150" y="310" fill="#17241c" font-family="monospace" font-size="22">01  Clean transactions</text>
+  <text x="150" y="365" fill="#17241c" font-family="monospace" font-size="22">02  Derive month &amp; margin</text>
+  <text x="150" y="420" fill="#17241c" font-family="monospace" font-size="22">03  Pivot Tables &amp; Charts</text>
+  <text x="150" y="475" fill="#17241c" font-family="monospace" font-size="22">04  Sales dashboard</text>
+  <rect x="615" y="195" width="475" height="340" fill="#f5f8f6" stroke="#d3ded7" stroke-width="3"/>
+  <text x="655" y="250" fill="#126b46" font-family="Arial,sans-serif" font-size="24" font-weight="700">EXCEL TOOLKIT</text>
+  <text x="655" y="320" fill="#17241c" font-family="monospace" font-size="25">XLOOKUP · VLOOKUP</text>
+  <text x="655" y="375" fill="#17241c" font-family="monospace" font-size="25">SUMIFS · INDEX-MATCH</text>
+  <text x="655" y="430" fill="#17241c" font-family="monospace" font-size="25">IFS · PIVOT TABLES</text>
+  <text x="655" y="485" fill="#17241c" font-family="monospace" font-size="25">PIVOT CHARTS</text>
+</svg>
