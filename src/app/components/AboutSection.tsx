@@ -7,15 +7,15 @@ const skillGroups = [
   },
   {
     title: "IoT & Hardware",
-    skills: ["ESP32", "ESP32-CAM", "Mappi32", "PZEM-004T", "DHT22", "Modbus / TTL", "MQTT", "Arduino IDE (C++)", "Soldering"],
+    skills: ["ESP32", "ESP32-CAM", "Mappi32", "PZEM-004T", "DHT22", "Modbus / TTL", "MQTT Telemetry", "Arduino IDE (C++)", "Soldering"],
   },
   {
     title: "Data & Analytics",
-    skills: ["Python", "pandas", "scikit-learn", "xarray", "SQL", "PostgreSQL / TimescaleDB", "ETL Pipelines", "SARIMAX", "Machine Learning", "Reinforcement Learning (PPO)", "Microsoft Excel"],
+    skills: ["Python", "pandas", "scikit-learn", "xarray", "SciPy", "SQL", "PostgreSQL / TimescaleDB", "ETL Pipelines", "SARIMAX", "Machine Learning", "Gymnasium", "Stable-Baselines3", "PyTorch", "Optuna", "Reinforcement Learning (PPO / SAC)", "Energy Dispatch Optimization", "MILP", "Microsoft Excel"],
   },
   {
     title: "Cloud & Tools",
-    skills: ["AWS (EC2)", "Docker", "Git", "GitHub Actions", "Firebase", "Grafana", "Google Colab", "Plotly", "Leaflet", "Microsoft Fabric", "VS Code"],
+    skills: ["AWS (EC2)", "Docker", "SQLite", "Git", "GitHub Actions", "Firebase", "Grafana", "Google Colab", "Plotly", "Leaflet", "React", "Vite", "Three.js", "Microsoft Fabric", "VS Code"],
   },
 ];
 

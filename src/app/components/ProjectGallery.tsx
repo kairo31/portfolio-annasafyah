@@ -20,6 +20,21 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: "microgrid",
+    name: "Microgrid Energy Dispatch & 3D Digital Twin",
+    description:
+      "Rural microgrid simulation combining an MQTT telemetry pipeline, dispatch optimization, and an interactive 3D digital twin.",
+    detail:
+      "Models solar PV, micro-hydro, battery storage, diesel generation, and flexible community loads. Compares SAC and PPO with MILP and rule-based controllers across normal, heavy-rain, drought, load-shift, and hydro-outage scenarios. The dispatch model uses synthetic data and illustrative assumptions, not field-validated measurements.",
+    image: "/microgrid-digital-twin.svg",
+    imageAlt: "Illustration of the Microgrid Desa-01 3D digital twin and energy system",
+    metric: "3D Digital Twin",
+    categories: ["IoT & Hardware", "Data & ML"],
+    tags: ["Python", "MQTT", "TimescaleDB", "SAC", "PPO", "MILP", "React", "Three.js"],
+    demo: "https://mikrogrid.annasafyah.dev/",
+    source: "https://github.com/kairo31/microgrid",
+  },
+  {
     id: "adaptive-hepa",
     name: "Adaptive HEPA Air Purifier — Digital Twin",
     description:
