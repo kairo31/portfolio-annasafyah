@@ -86,8 +86,8 @@ const projects: Project[] = [
       "Field sensor verification and prototype testing during hardware internships at Mertani and Karya Merapi Teknologi.",
     detail:
       "Calibrated 50+ Automatic Rainfall Recorder sensors and 10+ soil moisture sensors, configured 20+ field sensors over TTL/Modbus, and tested five smart automation prototypes. All prototypes reached 100% serial transmission reliability in pre-deployment HIL tests.",
-    image: "/hardware-validation.svg",
-    imageAlt: "Hardware validation summary showing calibration and HIL test results",
+    image: "/hardware-calibration.webp",
+    imageAlt: "Technician calibrating a field environmental sensor",
     metric: "100% serial reliability",
     period: "Jan – Jun 2025",
     categories: ["IoT & Hardware", "QA/QC"],
